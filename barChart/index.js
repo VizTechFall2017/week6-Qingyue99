@@ -25,9 +25,10 @@ svg.append("g")
 
 
 //import the data from the .csv file
-d3.csv('./incomeDataAllYears.csv', function(dataIn){
+d3.csv('./countryData.csv', function(dataIn){
 
-    nestedData = d3.nest()
+
+    /*nestedData = d3.nest()
         .key(function(d){return d.year})
         .entries(dataIn);
 

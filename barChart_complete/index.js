@@ -8,7 +8,7 @@ var nestedData = [];
 
 var svg = d3.select('svg')
     .append('g')
-    .attr('transform', 'translate(' + marginLeft + ',' + marginTop + ')');
+    .attr('transform', 'translate'+'(' + marginLeft + ',' + marginTop + ')');
 
 //these are the size that the axes will be on the screen; set the domain values after the data loads.
 var scaleX = d3.scaleBand().rangeRound([0, 600]).padding(0.1);

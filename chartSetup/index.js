@@ -1,8 +1,18 @@
-var svg = d3.select('svg');
+var width = d3.select('svg').attr('width');
+var height = d3.select('svg').attr('height');
+
+var marginLeft = 100;
+    marginTop = 100;
+
+console.log(width);
+
+var svg = d3.select('svg')
+    .append('g')
+    .attr('transform', 'translate(' + marginLeft + 100 + ',' + marginTop + ')');
 
 //set up scales to position circles using the data
-var scaleX = d3.scalePoint().domain(["16-19", "20-24", "25-34", "35-44", "45-54", "55-64","65+"]).range([0, 600]);
-var scaleY = d3.scaleLinear().domain([0,1200]).range([400, 0]);  //remember that 0,0 is at the top of the screen! 300 is the lowest value on the y axis
+var scaleX = d3.scalePoint().range([0, 600]).padding(0.3);
+var scaleY = d3.scaleLinear().range([400, 0]);  //remember that 0,0 is at the top of the screen! 300 is the lowest value on the y axis
 
 var nestedData = [];
 
@@ -23,10 +33,35 @@ d3.csv('./incomeDataAllYears.csv', function(dataIn){
         .key(function(d){return d.year})
         .entries(dataIn);
 
-    var loadData = nestedData.filter(function(d){return d.key == '2016'})[0].values;
+    var loadData = nestedData.filter(function(d){return d.key == '2007'})[0].values;
 
+    loadData.map(function(d){
+        return d.countryCode;
+    })
 
+    scaleX.domain(
+        loadData.map(function(d){
+            return d.CountryCode;
+        }
+    )
+
+        var loadData = nestedData.filter(function(d){return d.countryCode;}))
+
+    map(function(d){return d.countryCode;}));
+
+ scaleX.domain(loadData.map
+
+     svg.selectAll('.bars')
+         .data(pointData)
+         .attr('x', function(d){
+             return scale(d.totalPop);
+         })
+         .attr('width',scaleX.bandwidth())
+         .attr('width',scaleX.bandwidth())
+}
+  /*
     svg.append('text')
+
         .text('Weekly income by age and gender')
         .attr('transform','translate(300, -20)')
         .style('text-anchor','middle');
@@ -104,3 +139,4 @@ function sliderMoved(value){
     drawPoints(newData);
 
 }
+/*
