@@ -1,25 +1,41 @@
-d3.csv('./bubble chart compare', function(data) {
+var margin = {top: 30, right: 15, bottom: 80, left: 60}
+    outerWidth = 1100,
+        outerHeight = 700,
+    width = 1100 - margin.left - margin.right
+    height = 700 - margin.top - margin.bottom;
+
+var x = d3.scale.linear()
+    .domain([0,6])
+    .range([ 0, width ]);
+
+var y = d3.scale.linear()
+    .domain([0, 6])
+    .range([ height, 0 ]);
+
+var xValue = "frequency",
+        yValue = "nearby",
+        rValue = "gather(g)",
+        colorValue = "Manufacturer";
 
 
-    var w = 800;
-    var h = 300;
+d3.csv("bubble chart compare", function(data) {
+    data.forEach(function(d) {
 
-    var svg = d3.select("body")
+var svg = d3.select("body")
         .append("svg")
-        .attr("width", w)
-        .attr("height", h);
-    svg.selectAll("circle")
+        .attr("width", width)
+        .attr("height", height);
+
+svg.selectAll("circle")
         .data(data)
         .enter()
         .append("circle")
-        .attr("cx", function(d) {
-            return d.frequency;
-        })
-        .attr("cy", function(d) {
-            return d.nearby;
-        })
-        .attr("r", function(d) {
-            return Math.sqrt(h - d[1]);
+        .attr("cx", function(d)
+            {return (d.frequency)*0.7;})
+        .attr("cy", function(d)
+            {return (d.nearby)*0.7;})
+        .attr("r", function(d)
+{return Math.sqrt(h - d[1]);
         });
     svg.selectAll("text")
         .data(data)
