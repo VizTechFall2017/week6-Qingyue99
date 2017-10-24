@@ -10,10 +10,10 @@ var x = d3.scale.linear()
 var y = d3.scale.linear()
     .range([ height, 0 ]).nice();
 
-var xCat = "frequency",
-        yCat = "nearby",
-        rCat = "percentage",
-        colorCat = "raw";
+var xValue = "frequency",
+        yValue = "nearby",
+        rValue = "percentage",
+        colorValue = "raw";
 
 d3.csv("bcc.csv", function(data){
     data.forEach(function(d){
@@ -46,7 +46,7 @@ d3.csv("bcc.csv", function(data){
         .attr("class", "d3-tip")
         .offset([-10, 0])
         .html(function(d) {
-            return xCat + ": " + d[xCat] + "<br>" + yCat + ": " + d[yCat] + "<br>" + rCat + ": " + d[rCat];
+            return xCat + ": " + d[xValue] + "<br>" + yValue + ": " + d[yValue] + "<br>" + rValue + ": " + d[rValue];
         });
 
     var zoomBeh = d3.behavior.zoom()
@@ -78,7 +78,7 @@ d3.csv("bcc.csv", function(data){
         .attr("x", width)
         .attr("y", margin.bottom - 10)
         .style("text-anchor", "end")
-        .text(xCat);
+        .text(xValue);
 
     svg.append("g")
         .classed("y axis", true)
@@ -89,7 +89,7 @@ d3.csv("bcc.csv", function(data){
         .attr("y", -margin.left)
         .attr("dy", ".71em")
         .style("text-anchor", "end")
-        .text(yCat);
+        .text(yValue);
 
     var objects = svg.append("svg")
         .classed("objects", true)
@@ -115,9 +115,9 @@ d3.csv("bcc.csv", function(data){
         .data(data)
         .enter().append("circle")
         .classed("dot", true)
-        .attr("r", function (d) { return 200*d[rCat]; })
+        .attr("r", function (d) { return 235*d[rValue]; })
         .attr("transform", transform)
-        .style("fill", function(d) { return color(d[colorCat]); })
+        .style("fill", function(d) { return color(d[colorValue]); })
         .on("mouseover", tip.show)
         .on("mouseout", tip.hide);
 
@@ -130,7 +130,7 @@ d3.csv("bcc.csv", function(data){
     }
 
     function transform(d) {
-        return "translate(" + x(d[xCat]) + "," + y(d[yCat]) + ")";
+        return "translate(" + x(d[xValue]) + "," + y(d[yValue]) + ")";
     }
 });
 
