@@ -1,7 +1,7 @@
-var margin = {top: 30, right: 15, bottom: 80, left: 60},
-    outerWidth = 1100,
+var margin = {top: 30, right: 35, bottom: 80, left: 60},
+    outerWidth = 1300,
     outerHeight = 700,
-    width = 1100 - margin.left - margin.right,
+    width = 1300 - margin.left - margin.right,
     height = 700 - margin.top - margin.bottom;
 
 var x = d3.scale.linear()
@@ -22,12 +22,17 @@ d3.csv("bcc.csv", function(data){
         d.nearby = +d.nearby;
     });
     console.log(data);
-    var xMax = d3.max(data, function(d) { return d.frequency; }) * 2.7,
-        xMin = d3.min(data, function(d) { return d.frequency; }),
-        xMin = xMin > 0 ? 0 : xMin,
-        yMax = d3.max(data, function(d) { return d.nearby; }) * 2.7,
-        yMin = d3.min(data, function(d) { return d.nearby; }),
-        yMin = yMin > 0 ? 0 : yMin;
+    var xMax = d3.max(data, function(d) { return d.frequency; }) *3,
+        xMin = d3.min(data, function(d) { return d.frequency; });
+    if (xMin> 0 )
+        xMin = 0;
+
+        yMax = d3.max(data, function(d) { return d.nearby; }) *3,
+        yMin = d3.min(data, function(d) { return d.nearby; });
+        if (yMin> 0 )
+            yMin = 0;
+
+
     x.domain([xMin, xMax]);
     y.domain([yMin, yMax]);
     var xAxis = d3.svg.axis()
@@ -46,7 +51,7 @@ d3.csv("bcc.csv", function(data){
         .attr("class", "d3-tip")
         .offset([-10, 0])
         .html(function(d) {
-            return xCat + ": " + d[xValue] + "<br>" + yValue + ": " + d[yValue] + "<br>" + rValue + ": " + d[rValue];
+            return xValue + ": " + d[xValue] + "<br>" + yValue + ": " + d[yValue] + "<br>" + rValue + ": " + d[rValue];
         });
 
     var zoomBeh = d3.behavior.zoom()

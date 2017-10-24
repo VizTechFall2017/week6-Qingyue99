@@ -1,3 +1,11 @@
+
+h{
+    font-size:39px;
+    font-family: 'Roboto Condensed', sans-serif;
+    color:#403F48;
+    opacity:0.7;
+}
+
 rect {
     fill: transparent;
     shape-rendering: crispEdges;
