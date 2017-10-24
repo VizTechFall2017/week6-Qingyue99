@@ -39,8 +39,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+            <state relative-caret-position="75">
+              <caret line="5" column="16" lean-forward="true" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -70,8 +70,8 @@
         <option value="$PROJECT_DIR$/index1.html" />
         <option value="$PROJECT_DIR$/bubble chart compare.csv" />
         <option value="$PROJECT_DIR$/index1.js" />
-        <option value="$PROJECT_DIR$/style.css" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/style.css" />
       </list>
     </option>
   </component>
@@ -82,8 +82,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="291" />
-    <option name="y" value="234" />
+    <option name="x" value="6" />
+    <option name="y" value="117" />
     <option name="width" value="1434" />
     <option name="height" value="831" />
   </component>
@@ -149,15 +149,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1508782268171</updated>
-      <workItem from="1508782269309" duration="10813000" />
+      <workItem from="1508782269309" duration="11034000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10813000" />
+    <option name="totallyTimeSpent" value="11034000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="291" y="234" width="1434" height="831" extended-state="0" />
+    <frame x="6" y="117" width="1434" height="831" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24965133" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -197,18 +197,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index1.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1286">
           <caret line="14" column="30" lean-forward="true" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="16" lean-forward="true" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
           <folding />
         </state>
       </provider>
